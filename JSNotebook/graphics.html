@@ -14,7 +14,7 @@
     </div>
     
     <!-- Describe what this notebook page is showing -->
-    <p><em>What I learned today...</em></p>
+    <p><em>Creating Images</em></p>
     
     <!-- Below is the code that will run -->
     <div>
@@ -26,6 +26,23 @@
 <script class="code">
 
     //Your code here
+    function start(){
+        canvas.prepare();
+        var y = canvas.getHeight()*1/3;
+        var rect1= new Rect(0, 0, canvas.getWidth(), canvas.getHeight());
+        var rect2= new Rect(canvas.getWidth()/2, canvas.getHeight()*.75+ y/4, y/2, y/2 );
+        var rect3= new Rect(canvas.getWidth()/2, canvas.getHeight()*.75- y/1.75, y/2*2/3, y/2*2/3 );
+        var rect4= new Rect(canvas.getWidth()/2, canvas.getHeight()*.75- y/.89, y/2*2/3*2/3, y/2*2/3*2/3 );
+        rect1.setColor("black");
+        rect2.setColor("white");
+        rect3.setColor("white");
+        rect4.setColor("white");
+        canvas.add(rect1);
+        canvas.add(rect2);
+        canvas.add(rect3);
+        canvas.add(rect4);
+        canvas.draw();
+    }
 
 </script>
       <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
