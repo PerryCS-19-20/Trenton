@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>      
+    <link href="https://perryma.tk/jsnotebook/notebook.css" rel="stylesheet" type="text/css" />    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>My JavaScript Notebook Bunch of Circles</title>
+  </head>
+
+  <body>
+    <div class="header">
+        <!-- Title for this notebook page -->
+        <h1>My JavaScript Notebook: <em>Graphics Objects</em></h1>
+        <div class="menubar"></div>
+    </div>
+    
+    <!-- Describe what this notebook page is showing -->
+    <p><em>I learn that for loops can make some interesting art.</em></p>
+    
+    <!-- Below is the code that will run -->
+    <div>
+      <div class="title"> <!-- title bar for the javascript code -->
+        <button onclick="start();">Run</button> <!-- Run button that calls start function when pressed -->
+        tilingCircles <!-- Program title -->
+      </div>
+
+<script class="code">
+
+    //Your code here
+    function start(){
+        canvas.prepare();
+        var circle = readInt("Number of circles in row");
+        var circleD = canvas.getWidth()/circle;
+        var circleColumn = canvas.getHeight()/circleD;
+        for(var count2=1; count2<circleColumn+1; count2=count2+1){ 
+            for(var count=1; count<circle+1; count=count+1){
+              var r = Math.floor(Math.random() * 256);
+              var g = Math.floor(Math.random() * 256);
+              var b = Math.floor(Math.random() * 256);
+              var circleX = count*canvas.getWidth()/circle-canvas.getWidth()/circle/2;
+              var circleY =  count2*canvas.getHeight()/circleColumn-canvas.getHeight()/circleColumn/2;
+              var cir1= new Circle(circleX , circleY , circleD/2);
+              cir1.setColor(rgb(r, g, b));
+              canvas.add(cir1); 
+            }
+        }
+        canvas.draw();
+      }
+
+</script>
+      <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
+      <textarea id="Console"></textarea> <!-- Text output console -->
+    </div>
+    <script src="https://perryma.tk/jsnotebook/notebook.js"></script>    
+  </body>
+</html>
